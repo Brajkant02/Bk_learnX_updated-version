@@ -1,0 +1,13 @@
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+# Dependencies and builds
+node_modules/
+.vercel/
+android/
+ios/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
