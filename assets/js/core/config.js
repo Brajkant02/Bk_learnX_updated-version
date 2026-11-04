@@ -3,7 +3,7 @@
 // NEVER put the service_role key in any frontend file.
 window.BK_CONFIG = {
   SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
-  SUPABASE_ANON_KEY: "YOUR-ANON-KEY",
+  SUPABASE_ANON_KEY: "sb_publishable_wSNPcsosrR71L40-FD1ytg_wEYDX6hy",
   LOGIN_URL: "/pages/auth/login/",
   DASHBOARD_URL: "/pages/student/dashboard/",
   ADMIN_LOGIN_URL: "/pages/admin/login/",
