@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-preview>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>BK LearnX design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<script src="../assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container">
+  <section class="bk-section">
+    <div class="bk-hero">
+      <h1 data-i18n="p_title"></h1>
+      <p data-i18n="p_sub"></p>
+      <div class="bk-row"><a class="bk-btn bk-btn--light" href="#" data-i18n="p_b1"></a><a class="bk-btn bk-btn--accent" href="#" data-i18n="p_b2"></a></div>
+    </div>
+  </section>
+
+  <section class="bk-section bk-stack">
+    <h2 data-i18n="p_h_colors"></h2>
+    <div class="bk-grid" style="grid-template-columns:repeat(auto-fit,minmax(110px,1fr))">
+      <div><div class="bk-swatch" style="background:var(--primary)"></div><small>primary</small></div>
+      <div><div class="bk-swatch" style="background:var(--accent-btn)"></div><small>accent</small></div>
+      <div><div class="bk-swatch" style="background:var(--gold)"></div><small>gold</small></div>
+      <div><div class="bk-swatch" style="background:var(--surface)"></div><small>surface</small></div>
+      <div><div class="bk-swatch" style="background:var(--grad-brand)"></div><small>gradient</small></div>
+    </div>
+  </section>
+
+  <section class="bk-section bk-stack">
+    <h2 data-i18n="p_h_cards"></h2>
+    <div class="bk-grid">
+      <a class="bk-card" href="#"><div class="bk-tile">PG</div><h3>PGDCA</h3><p class="bk-muted" data-i18n="p_c1"></p></a>
+      <a class="bk-card" href="#"><div class="bk-tile bk-tile--gold">Py</div><h3>Python</h3><p class="bk-muted" data-i18n="p_c2"></p></a>
+      <a class="bk-card" href="#"><div class="bk-tile bk-tile--coral">Jv</div><h3>Java</h3><p class="bk-muted" data-i18n="p_c3"></p></a>
+    </div>
+    <div class="bk-grid">
+      <div class="bk-card bk-stack"><h3 data-i18n="p_prog"></h3>
+        <div class="bk-progress" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="--v:72%"><i></i></div>
+        <p class="bk-muted">72%</p>
+        <span class="bk-badge bk-badge--ok" data-i18n="p_ok"></span> <span class="bk-badge bk-badge--warn" data-i18n="p_warn"></span> <span class="bk-badge bk-badge--err" data-i18n="p_err"></span></div>
+      <div class="bk-card bk-card--brand bk-stack"><h3 data-i18n="p_cont"></h3><p class="bk-muted" data-i18n="p_cont_s"></p><a class="bk-btn bk-btn--light bk-btn--sm" href="#" data-i18n="p_resume"></a></div>
+    </div>
+  </section>
+
+  <section class="bk-section bk-stack">
+    <h2 data-i18n="p_h_forms"></h2>
+    <div class="bk-grid">
+      <form class="bk-card bk-stack" onsubmit="return false">
+        <div class="bk-field"><label class="bk-label" for="n" data-i18n="p_name"></label><input class="bk-input" id="n" autocomplete="name"></div>
+        <div class="bk-field"><label class="bk-label" for="e">Email</label><input class="bk-input" id="e" type="email" autocomplete="email"><span class="bk-error" data-i18n="p_err_msg"></span></div>
+        <button class="bk-btn" type="button" id="t" data-i18n="p_save"></button>
+      </form>
+      <div class="bk-empty"><p data-i18n="p_empty"></p><p><a class="bk-btn bk-btn--sm bk-btn--ghost" href="#" data-i18n="p_add"></a></p></div>
+    </div>
+  </section>
+</main>
+<div id="bk-footer"></div>
+<script src="../assets/js/core/i18n.js"></script>
+<script>
+BKI18n.add({
+ en:{p_title:"Learn computer courses, one unit at a time",p_sub:"Notes, previous papers and typing practice in Hindi and English.",p_b1:"Browse programs",p_b2:"Take a typing test",
+ p_h_colors:"Colours",p_h_cards:"Cards and progress",p_h_forms:"Forms and states",p_c1:"Semester-wise notes and papers",p_c2:"Hindi notes, 10 units",p_c3:"Core Java, 14 units",
+ p_prog:"Python progress",p_ok:"Completed",p_warn:"In progress",p_err:"Not started",p_cont:"Continue where you left off",p_cont_s:"Python, Unit 4",p_resume:"Resume unit",
+ p_name:"Your name",p_err_msg:"Enter a valid email address.",p_save:"Save changes",p_empty:"You have not saved any notes yet.",p_add:"Add a course",p_saved:"Saved"},
+ hi:{p_title:"कंप्यूटर कोर्स सीखें, एक-एक यूनिट करके",p_sub:"हिंदी और अंग्रेज़ी में नोट्स, पिछले साल के पेपर और टाइपिंग अभ्यास।",p_b1:"प्रोग्राम देखें",p_b2:"टाइपिंग टेस्ट दें",
+ p_h_colors:"रंग",p_h_cards:"कार्ड और प्रगति",p_h_forms:"फ़ॉर्म और स्थितियाँ",p_c1:"सेमेस्टर के हिसाब से नोट्स और पेपर",p_c2:"हिंदी नोट्स, 10 यूनिट",p_c3:"कोर Java, 14 यूनिट",
+ p_prog:"Python की प्रगति",p_ok:"पूरा हुआ",p_warn:"जारी है",p_err:"शुरू नहीं हुआ",p_cont:"जहाँ छोड़ा था वहीं से जारी रखें",p_cont_s:"Python, यूनिट 4",p_resume:"यूनिट खोलें",
+ p_name:"आपका नाम",p_err_msg:"सही email पता डालें।",p_save:"बदलाव सहेजें",p_empty:"आपने अभी कोई नोट्स सेव नहीं किए हैं।",p_add:"कोर्स जोड़ें",p_saved:"सहेज लिया"}
+});
+document.getElementById("t").addEventListener("click",function(){
+  var d=document.createElement("div");d.className="bk-toast";d.setAttribute("role","status");d.textContent=BKI18n.t("p_saved");
+  document.body.appendChild(d);setTimeout(function(){d.remove()},2200);
+});
+</script>
+<script src="../assets/js/components/layout.js" defer></script>
+</body>
+</html>

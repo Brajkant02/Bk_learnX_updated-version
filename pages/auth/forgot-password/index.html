@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>Reset password | BK LearnX</title>
+<meta name="description" content="Reset your BK LearnX password with a one-time code sent to your email.">
+<link rel="canonical" href="https://bk-learnx.vercel.app/pages/auth/forgot-password/">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container"><div class="bk-auth bk-card bk-stack">
+<h1 data-i18n="forgot_title"></h1>
+<p class="bk-muted" data-i18n="forgot_sub"></p>
+<form data-form="forgot" class="bk-stack" novalidate>
+<div class="bk-field"><label class="bk-label" for="email" data-i18n="email"></label><input class="bk-input" id="email" type="email" autocomplete="email" required></div>
+<button class="bk-btn" type="submit" data-i18n="send_otp"></button>
+</form>
+<form id="form2" class="bk-stack" novalidate hidden>
+<div class="bk-field"><label class="bk-label" for="otp" data-i18n="otp"></label><input class="bk-input" id="otp" type="text" autocomplete="one-time-code" inputmode="numeric" maxlength="10" required></div>
+<div class="bk-field"><label class="bk-label" for="password" data-i18n="new_pass"></label><input class="bk-input" id="password" type="password" autocomplete="new-password" required minlength=8></div>
+<div class="bk-field"><label class="bk-label" for="password2" data-i18n="password2"></label><input class="bk-input" id="password2" type="password" autocomplete="new-password" required minlength=8></div>
+<button class="bk-btn" type="submit" data-i18n="save_pass"></button>
+<button class="bk-btn bk-btn--ghost" type="button" id="resend" data-i18n="resend"></button>
+</form>
+<p id="msg" role="alert" hidden></p>
+<p><a class="bk-link" href="../login/" data-i18n="back_login"></a></p>
+</div></main>
+<div id="bk-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/programs.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/pages/auth.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

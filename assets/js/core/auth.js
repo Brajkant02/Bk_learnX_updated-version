@@ -4,14 +4,17 @@
   var sb = window.sb;
 
   function friendly(err) {
+    var hi = window.BKI18n && window.BKI18n.lang === "hi";
+    function p(h, e) { return hi ? h : e; }
     var m = (err && err.message || "").toLowerCase();
-    if (m.includes("invalid login")) return "Email या password गलत है।";
-    if (m.includes("already registered") || m.includes("already been registered")) return "यह email पहले से registered है।";
-    if (m.includes("email not confirmed")) return "पहले अपना email verify करें (inbox देखें)।";
-    if (m.includes("token has expired") || m.includes("invalid") && m.includes("token")) return "OTP गलत है या समय समाप्त हो गया।";
-    if (m.includes("rate limit") || m.includes("too many")) return "बहुत ज़्यादा कोशिशें हुईं। थोड़ी देर बाद फिर करें।";
-    if (m.includes("password") && m.includes("characters")) return "Password कम से कम 8 अक्षर का रखें।";
-    return err && err.message ? err.message : "कुछ गड़बड़ हुई, फिर कोशिश करें।";
+    if (m.includes("invalid login")) return p("Email या password गलत है।", "Wrong email or password.");
+    if (m.includes("already registered") || m.includes("already been registered")) return p("यह email पहले से registered है।", "This email is already registered.");
+    if (m.includes("email not confirmed")) return p("पहले अपना email verify करें (inbox देखें)।", "Confirm your email first (check your inbox).");
+    if (m.includes("expired") || (m.includes("invalid") && m.includes("token"))) return p("OTP गलत है या समय समाप्त हो गया।", "The OTP is wrong or has expired.");
+    if (m.includes("rate limit") || m.includes("too many") || m.includes("security purposes")) return p("बहुत ज़्यादा कोशिशें हुईं। थोड़ी देर बाद फिर करें।", "Too many attempts. Try again in a little while.");
+    if (m.includes("password") && (m.includes("characters") || m.includes("weak"))) return p("Password कम से कम 8 अक्षर का रखें।", "Use a password of at least 8 characters.");
+    if (m.includes("same password")) return p("नया password पुराने से अलग रखें।", "Choose a password different from the old one.");
+    return p("कुछ गड़बड़ हुई, फिर कोशिश करें।", "Something went wrong. Try again.");
   }
   function check(res) { if (res.error) { var e = res.error; e.friendly = friendly(e); throw e; } return res.data; }
 
@@ -42,7 +45,7 @@
     },
     async afterLogin() {
       var p = await BKAuth.getProfile();
-      if (p && p.blocked) { await sb.auth.signOut(); throw { friendly: "आपका account block है। Contact करें।" }; }
+      if (p && p.blocked) { await sb.auth.signOut(); throw { friendly: window.BKI18n && window.BKI18n.lang === "hi" ? "आपका account block है। संपर्क करें।" : "Your account is blocked. Please contact us." }; }
       return p;
     },
     async signOut() { await sb.auth.signOut(); location.href = C.LOGIN_URL; },

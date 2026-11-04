@@ -42,7 +42,7 @@ language sql stable set search_path = public as $$
            c.total_units, c.sort_order, x.source
     from (
       select c.id, 'semester'::text as source from courses c, me
-        where c.program = me.program and c.semester = me.semester
+        where c.program = me.program and c.semester is not distinct from me.semester
       union all
       select uc.course_id, 'added'::text from user_courses uc where uc.user_id = auth.uid()
     ) x join courses c on c.id = x.id
