@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>Typing Practice for Government Exams | BK LearnX</title>
+<meta name="description" content="Typing practice for SSC CHSL, SSC CGL DEST, RRB NTPC, DSSSB, DDA JSA, High Court and clerk exams in English and Hindi.">
+<link rel="canonical" href="https://bk-learnx.vercel.app/typing/1-exam-selection.html">
+
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container"><section class="bk-section bk-stack">
+<h1 data-i18n="t_title"></h1><p class="bk-muted" data-i18n="t_sub"></p>
+<div id="guest" class="bk-card bk-stack" hidden>
+<p data-i18n="t_who_guest"></p>
+<div class="bk-opts"><div class="bk-field"><label class="bk-label" for="name" data-i18n="t_name"></label><input class="bk-input" id="name" autocomplete="name" maxlength="100"></div>
+<div class="bk-field"><label class="bk-label" for="email" data-i18n="t_email"></label><input class="bk-input" id="email" type="email" autocomplete="email" maxlength="254"></div></div>
+<p class="bk-hint"><span data-i18n="t_consent"></span> <a class="bk-link" href="/pages/privacy/" data-i18n="t_privacy"></a></p>
+</div>
+<div id="user" class="bk-card" hidden><p data-i18n="t_who_user"></p></div>
+<h2 data-i18n="t_exam"></h2>
+<div id="exams" class="bk-exams"></div>
+<div class="bk-opts">
+<div class="bk-field"><label class="bk-label" for="lang" data-i18n="t_lang"></label><select class="bk-input" id="lang"><option value="en" data-i18n="t_en"></option><option value="hi" data-i18n="t_hi"></option></select></div>
+<div class="bk-field"><label class="bk-label" for="source" data-i18n="t_source"></label><select class="bk-input" id="source"><option value="practice" data-i18n="t_src_practice"></option><option value="current" data-i18n="t_src_current"></option><option value="mixed" data-i18n="t_src_mixed"></option></select></div>
+<div class="bk-field"><label class="bk-label" for="duration" data-i18n="t_dur"></label><select class="bk-input" id="duration"><option value="5">5</option><option value="10">10</option><option value="15">15</option></select></div>
+</div>
+<p id="msg" class="bk-error" role="alert" hidden></p>
+<p><button id="start" type="button" class="bk-btn bk-btn--accent" data-i18n="t_start"></button></p>
+</section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/typing/data.js"></script>
+<script src="/assets/js/typing/common.js"></script>
+<script src="/assets/js/typing/select.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

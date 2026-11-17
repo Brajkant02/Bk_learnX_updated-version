@@ -2,6 +2,8 @@
 (function () {
   var C = window.BK_CONFIG;
   var sb = window.sb;
+  var NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  var SITE = (C && C.SITE_URL) || location.origin;     // in the app, emails must open the real website, not the app's own address
 
   function friendly(err) {
     var hi = window.BKI18n && window.BKI18n.lang === "hi";
@@ -19,6 +21,7 @@
   function check(res) { if (res.error) { var e = res.error; e.friendly = friendly(e); throw e; } return res.data; }
 
   var BKAuth = {
+    native: NATIVE,
     friendly: friendly,
 
     // ---- Registration ----
@@ -27,8 +30,8 @@
       var data = check(await sb.auth.signUp({
         email: f.email, password: f.password,
         options: {
-          data: { name: f.name, mobile: f.mobile, program: f.program, semester: String(f.semester) },
-          emailRedirectTo: location.origin + C.LOGIN_URL
+          data: { name: f.name, mobile: f.mobile, program: f.program, semester: String(f.semester), medium: f.medium === "hi" ? "hi" : "en" },
+          emailRedirectTo: SITE + C.LOGIN_URL
         }
       }));
       // If email confirmation is ON there is no session yet: tell the user to check inbox
@@ -41,6 +44,7 @@
       return BKAuth.afterLogin();
     },
     async signInGoogle() {
+      if (NATIVE) throw { friendly: window.BKI18n && window.BKI18n.lang === "hi" ? "ऐप में Google login अभी उपलब्ध नहीं है। Email से login करें।" : "Google login is not available in the app yet. Please use email." };
       check(await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + C.DASHBOARD_URL } }));
     },
     async afterLogin() {
@@ -84,11 +88,11 @@
       var r = await sb.from("profiles").select("*").eq("id", s.user.id).single();
       return r.error ? null : r.data;
     },
-    // allowed fields: name, mobile, program, semester
+    // allowed fields: name, mobile, program, semester, medium
     async updateProfile(fields) {
       var s = await BKAuth.getSession();
       var allowed = {};
-      ["name", "mobile", "program", "semester"].forEach(function (k) { if (k in fields) allowed[k] = fields[k]; });
+      ["name", "mobile", "program", "semester", "medium"].forEach(function (k) { if (k in fields) allowed[k] = fields[k]; });
       check(await sb.from("profiles").update(allowed).eq("id", s.user.id));
     },
     async uploadAvatar(file) {

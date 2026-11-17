@@ -11,3 +11,10 @@ ios/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# App build output
+www/
+app/node_modules/
+app/android/
+__pycache__/
+*.pyc

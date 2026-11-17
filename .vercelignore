@@ -1,0 +1,7 @@
+docs
+supabase
+tools
+app
+.github
+*.md
+.env.example

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>{{PAGE_TITLE}} | BK LearnX</title>
+<meta name="description" content="{{DESC}}">
+<link rel="canonical" href="https://bk-learnx.vercel.app{{CANON}}">
+{{ROBOTS}}
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/notes.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body data-subject-page data-subject="{{SLUG}}" data-subject-name="{{NAME}}" data-lang="{{LANG}}">
+<main id="main" class="bk-container bk-unit">
+<nav class="bk-crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span>{{NAME}}</span></nav>
+<h1>{{NAME}}</h1>
+<p class="bk-muted">{{DESC}}</p>
+<ol id="bk-units" class="bk-units">
+{{ITEMS}}
+</ol>
+</main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/core/progress.js"></script>
+<script src="/assets/js/components/rating.js"></script>
+<script src="/assets/js/components/unit.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

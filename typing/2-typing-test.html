@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>Typing Test | BK LearnX</title>
+<meta name="description" content="Typing test">
+<link rel="canonical" href="https://bk-learnx.vercel.app/typing/2-typing-test.html">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container"><section class="bk-section bk-stack">
+<div class="bk-bar"><h1 id="ename" style="font-size:1.3rem"></h1><div class="bk-timer" id="timer">00:00</div></div>
+<div class="bk-progress" id="bar" style="--v:0%"><i></i></div>
+<div class="bk-stats">
+<div class="bk-stat"><b id="s-net">0</b><span data-i18n="x_net"></span></div>
+<div class="bk-stat"><b id="s-acc">100%</b><span data-i18n="x_acc"></span></div>
+<div class="bk-stat"><b id="s-err">0</b><span data-i18n="x_err"></span></div>
+<div class="bk-stat"><b id="s-chars">0</b><span data-i18n="x_chars"></span></div>
+<div class="bk-stat"><b id="s-words">0</b><span data-i18n="x_words"></span></div>
+</div>
+<div class="bk-bar"><div class="bk-tabs" role="group" data-i18n-aria="x_mode"><button type="button" class="bk-tab" id="m-over" aria-pressed="true" data-i18n="x_mode_over"></button><button type="button" class="bk-tab" id="m-box" aria-pressed="false" data-i18n="x_mode_box"></button></div></div>
+<p id="lock" class="bk-hint" hidden data-i18n="x_lock"></p>
+<div class="bk-pw"><div class="bk-passage" id="passage"></div>
+<textarea class="bk-capture" id="capture" aria-label="Typing input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></textarea></div>
+<textarea class="bk-typebox" id="typebox" hidden data-i18n-placeholder="x_box_ph" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></textarea>
+<p class="bk-hint" data-i18n="x_click"></p>
+<p style="display:flex;gap:12px;flex-wrap:wrap"><button type="button" class="bk-btn bk-btn--accent" id="finish" data-i18n="x_finish"></button><a class="bk-btn bk-btn--ghost" href="1-exam-selection.html" data-i18n="x_change"></a></p>
+</section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/typing/data.js"></script>
+<script src="/assets/js/typing/common.js"></script>
+<script src="/assets/js/typing/test.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

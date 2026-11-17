@@ -1,0 +1,9 @@
+{
+  "appId": "com.bklearnx.app",
+  "appName": "BK LearnX",
+  "webDir": "www",
+  "backgroundColor": "#f2f5ee",
+  "server": {
+    "androidScheme": "https"
+  }
+}

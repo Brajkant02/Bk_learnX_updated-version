@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>Profile | BK LearnX</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://bk-learnx.vercel.app/pages/student/profile/">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<link rel="stylesheet" href="/assets/css/student.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container" data-snav="profile"><section class="bk-section bk-stack">
+<h1 data-i18n="p_title"></h1>
+<div class="bk-card bk-stack">
+<div class="bk-head"><div id="avatar"></div><div><label class="bk-btn bk-btn--ghost bk-btn--sm" for="photo" data-i18n="p_photo"></label><input id="photo" type="file" accept="image/jpeg,image/png,image/webp" hidden><p id="pmsg" role="alert" hidden></p></div></div>
+<form id="form" class="bk-stack" novalidate>
+<div class="bk-field"><label class="bk-label" for="name" data-i18n="p_name"></label><input class="bk-input" id="name" type="text" autocomplete="name"></div>
+<div class="bk-field"><label class="bk-label" for="email" data-i18n="p_email"></label><input class="bk-input" id="email" type="email" disabled></div>
+<div class="bk-field"><label class="bk-label" for="mobile" data-i18n="p_mobile"></label><input class="bk-input" id="mobile" type="tel" inputmode="numeric" maxlength="15" autocomplete="tel"></div>
+<div class="bk-field"><label class="bk-label" for="program" data-i18n="p_program"></label><select class="bk-input" id="program"></select></div>
+<div class="bk-field" id="sem-field" hidden><label class="bk-label" for="semester" data-i18n="p_semester"></label><select class="bk-input" id="semester"></select></div>
+<div class="bk-field"><label class="bk-label" for="medium" data-i18n="p_medium"></label><select class="bk-input" id="medium"><option value="en" data-i18n="m_en"></option><option value="hi" data-i18n="m_hi"></option></select></div>
+<p id="msg" role="alert" hidden></p>
+<button class="bk-btn" type="submit" data-i18n="p_save"></button>
+</form></div>
+<div class="bk-card bk-stack"><h2 style="font-size:1.1rem" data-i18n="p_pw"></h2>
+<form id="pwform" class="bk-stack" novalidate>
+<div class="bk-field"><label class="bk-label" for="pw" data-i18n="p_new_pw"></label><input class="bk-input" id="pw" type="password" autocomplete="new-password" minlength="8"></div>
+<div class="bk-field"><label class="bk-label" for="pw2" data-i18n="p_pw2"></label><input class="bk-input" id="pw2" type="password" autocomplete="new-password" minlength="8"></div>
+<p id="wmsg" role="alert" hidden></p>
+<button class="bk-btn" type="submit" data-i18n="p_pw_btn"></button></form></div>
+<div class="bk-card bk-danger bk-stack"><h2 style="font-size:1.1rem" data-i18n="p_del"></h2>
+<p class="bk-muted" data-i18n="p_del_warn"></p>
+<button type="button" id="del-open" class="bk-btn bk-btn--ghost" data-i18n="p_del"></button>
+<form id="delform" class="bk-stack" novalidate><div id="del-box" class="bk-stack" hidden>
+<div class="bk-field"><label class="bk-label" for="del-word" data-i18n="p_del_ask"></label><input class="bk-input" id="del-word" type="text" autocomplete="off"></div>
+<p id="dmsg" role="alert" hidden></p>
+<button class="bk-btn bk-btn--danger" id="del-btn" type="submit" data-i18n="p_del_btn"></button></div></form>
+</div></section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/programs.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/student/common.js"></script>
+<script src="/assets/js/student/profile.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

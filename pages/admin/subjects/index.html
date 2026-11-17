@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>Admin: Subjects | BK LearnX</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<link rel="stylesheet" href="/assets/css/student.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body data-admin="subjects">
+<main id="main" class="bk-container" data-admin-nav><section class="bk-section bk-stack">
+<h1 style="font-size:1.6rem">Subjects</h1>
+<p class="bk-muted">A subject lives in <code>/programs/&lt;folder&gt;/</code>. Each language is its own course. “Placed in” decides which branch and semester shows it. A subject placed nowhere is an individual course.</p>
+<form id="form" class="bk-card bk-stack" novalidate><b>Add a subject</b><div class="bk-opts"><div class="bk-field"><label class="bk-label" for="new-name">Name</label><input class="bk-input" id="new-name" maxlength="100" placeholder="Python"></div><div class="bk-field"><label class="bk-label" for="new-slug">Folder name</label><input class="bk-input" id="new-slug" maxlength="60" placeholder="python"></div></div><p id="msg" role="alert" hidden></p><div><button class="bk-btn" type="submit">Add subject</button></div></form>
+<div class="bk-bar"><span id="count" class="bk-muted"></span></div><p id="gmsg" role="alert" hidden></p>
+<div id="list" class="bk-stack"></div>
+</section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/programs.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/admin/admin.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

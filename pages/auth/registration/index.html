@@ -9,8 +9,10 @@
 <link rel="canonical" href="https://bk-learnx.vercel.app/pages/auth/registration/">
 <meta name="robots" content="noindex">
 
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/theme.css">
 <script src="/assets/js/core/theme.js"></script>
 </head>
@@ -24,6 +26,7 @@
 <div class="bk-field"><label class="bk-label" for="mobile" data-i18n="mobile"></label><input class="bk-input" id="mobile" type="tel" autocomplete="tel" inputmode="numeric" maxlength="15" required></div>
 <div class="bk-field"><label class="bk-label" for="program" data-i18n="program"></label><select class="bk-input" id="program" required></select></div>
 <div class="bk-field" id="sem-field" hidden><label class="bk-label" for="semester" data-i18n="semester"></label><select class="bk-input" id="semester"></select></div>
+<div class="bk-field"><label class="bk-label" for="medium" data-i18n="medium"></label><select class="bk-input" id="medium"><option value="en" data-i18n="m_en"></option><option value="hi" data-i18n="m_hi"></option></select></div>
 <div class="bk-field"><label class="bk-label" for="password" data-i18n="password"></label><input class="bk-input" id="password" type="password" autocomplete="new-password" required minlength=8></div>
 <div class="bk-field"><label class="bk-label" for="password2" data-i18n="password2"></label><input class="bk-input" id="password2" type="password" autocomplete="new-password" required minlength=8></div>
 <label class="bk-check"><input type="checkbox" id="agree"><span><span data-i18n="agree_pre"></span> <a class="bk-link" href="../../privacy/" data-i18n="privacy"></a> <span data-i18n="and"></span> <a class="bk-link" href="../../terms/" data-i18n="terms"></a></span></label>
@@ -33,7 +36,7 @@
 <p class="bk-muted"><span data-i18n="have_account"></span> <a class="bk-link" href="../login/" data-i18n="login_btn"></a></p>
 </div></main>
 <div id="bk-footer"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/assets/vendor/supabase.js"></script>
 <script src="/assets/js/core/config.js"></script>
 <script src="/assets/js/core/programs.js"></script>
 <script src="/assets/js/core/supabase.js"></script>

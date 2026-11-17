@@ -1,0 +1,30 @@
+/* Student area. Needs theme.css */
+.bk-subnav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;margin-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.bk-subnav::-webkit-scrollbar{display:none}
+.bk-subnav a{flex:none;min-height:40px;display:inline-flex;align-items:center;padding:0 16px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.9rem;color:var(--muted)}
+.bk-subnav a[aria-current="page"]{background:var(--primary);color:var(--on-primary);border-color:transparent}
+.bk-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--grad-brand);color:#fff;display:grid;place-items:center;font:700 1.4rem var(--font-head);flex:none}
+.bk-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.bk-dash{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.bk-span2{grid-column:1/-1}
+.bk-list{display:grid;gap:10px}
+.bk-row-card{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.bk-row-card .grow{flex:1;min-width:180px}
+.bk-row-card h3{font-size:1rem}
+.bk-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none}
+.bk-msg{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 14px}
+.bk-msg.unread{border-color:var(--accent)}
+.bk-msg button.bk-msg-h{all:unset;cursor:pointer;display:flex;gap:10px;align-items:center;width:100%}
+.bk-msg .bk-msg-b{margin-top:8px;white-space:pre-wrap}
+.bk-spark{width:100%;height:60px}
+.bk-spark .ln{fill:none;stroke:var(--accent);stroke-width:2.5}
+.bk-notice{border:1px solid var(--accent);background:rgba(255,91,57,.08);border-radius:14px;padding:14px 16px}
+.bk-danger{border-color:var(--err)}
+.bk-btn--danger{background:var(--err);color:#fff}
+.bk-panel{border:1px solid var(--line);border-radius:var(--r-md);padding:16px;background:var(--surface-2)}
+.bk-subnav{margin-top:16px}
+.bk-row-card h3{margin-bottom:6px}
+.bk-chip{display:inline-flex;gap:8px;align-items:center;padding:5px 12px;border-radius:99px;background:var(--surface-2);font-size:.85rem;font-weight:600}
+.bk-chip button{all:unset;cursor:pointer;color:var(--err);font-weight:700;line-height:1}
+.bk-chips{display:flex;gap:8px;flex-wrap:wrap}
+.bk-ok-t{color:var(--ok)}.bk-bad-t{color:var(--err)}

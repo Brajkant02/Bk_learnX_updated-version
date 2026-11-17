@@ -1,0 +1,24 @@
+{
+  "name": "bk-learnx-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Android app (APK) wrapper for BK LearnX, made with Capacitor.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:www": "node build-www.mjs",
+    "android:add": "cap add android",
+    "android:sync": "npm run build:www && cap sync android",
+    "android:open": "cap open android",
+    "configure": "node configure.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/core": "8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

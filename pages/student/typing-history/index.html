@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>My Typing History | BK LearnX</title>
+<meta name="description" content="Your typing progress">
+<link rel="canonical" href="https://bk-learnx.vercel.app/pages/student/typing-history/">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<link rel="stylesheet" href="/assets/css/student.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container" data-snav="typing"><section class="bk-section bk-stack">
+<h1 data-i18n="h_title"></h1>
+<div id="empty" class="bk-empty" hidden><p data-i18n="h_empty"></p><p><a class="bk-btn bk-btn--accent" href="/typing/1-exam-selection.html" data-i18n="h_take"></a></p></div>
+<div id="data" class="bk-stack" hidden>
+<div class="bk-card bk-stack"><h2 style="font-size:1.1rem" data-i18n="h_chart"></h2><p class="bk-hint" data-i18n="h_days"></p><div class="bk-tabs" id="tabs"></div><div id="chart"></div></div>
+<div class="bk-card bk-stack"><h2 style="font-size:1.1rem" data-i18n="h_recent"></h2><div class="bk-scroll"><table class="bk-table"><thead><tr><th data-i18n="h_date"></th><th data-i18n="h_exam"></th><th data-i18n="h_m_wpm"></th><th data-i18n="h_m_acc"></th><th data-i18n="h_m_err"></th></tr></thead><tbody id="rows"></tbody></table></div></div>
+</div>
+</section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/student/common.js"></script>
+<script src="/assets/js/typing/data.js"></script>
+<script src="/assets/js/typing/common.js"></script>
+<script src="/assets/js/typing/history.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

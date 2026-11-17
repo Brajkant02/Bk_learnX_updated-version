@@ -19,7 +19,7 @@
   var cur = location.pathname;
   var NAV = [
     { i: "home", k: "nav_home", p: "index.html", m: "" },
-    { i: "book", k: "nav_programs", p: "pages/programs/", m: "/pages/programs/" },
+    { i: "book", k: "nav_programs", p: "#programs", m: "/branch/" },
     { i: "kb", k: "nav_typing", p: "typing/1-exam-selection.html", m: "/typing/" }
   ];
   function isCur(n) {
@@ -43,7 +43,7 @@
 
     var foot = '<footer class="bk-footer"><div class="bk-container"><div><strong>BK LearnX</strong><br><span data-i18n="footer_note"></span></div>' +
       '<nav><a href="' + url("pages/contact/") + '" data-i18n="nav_contact"></a><a href="' + url("pages/privacy/") + '" data-i18n="footer_privacy"></a>' +
-      '<a href="' + url("pages/terms/") + '" data-i18n="footer_terms"></a></nav></div></footer>';
+      '<a href="' + url("pages/terms/") + '" data-i18n="footer_terms"></a><a href="#" id="bk-install" hidden data-i18n="install_app"></a></nav></div></footer>';
     var slot = document.getElementById("bk-footer");
     if (slot) slot.innerHTML = foot; else b.insertAdjacentHTML("beforeend", foot);
 
@@ -85,6 +85,27 @@
       }).catch(function () {});
   }
 
-  function init() { build(); wire(); paint(); window.BKI18n.apply(); backend(); }
+  // ---- app side: offline pages, install button, offline notice ----
+  var NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  var deferred = null;
+  function toast(k) { var d = document.createElement("div"); d.className = "bk-toast"; d.setAttribute("role", "status"); d.textContent = T(k); document.body.appendChild(d); setTimeout(function () { d.remove(); }, 3200); }
+  function appSide() {
+    var BUNDLED = NATIVE && location.hostname === "localhost";      // pages packed inside the APK: they are already on the phone
+    if (!BUNDLED && "serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+      var reg = function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); };
+      if (document.readyState === "complete") reg(); else window.addEventListener("load", reg);
+    }
+    window.addEventListener("offline", function () { toast("net_off"); });
+    window.addEventListener("online", function () { toast("net_on"); });
+    window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; var a = document.getElementById("bk-install"); if (a && !NATIVE) a.hidden = false; });
+    window.addEventListener("appinstalled", function () { deferred = null; var a = document.getElementById("bk-install"); if (a) a.hidden = true; });
+    var a = document.getElementById("bk-install");
+    if (a) a.addEventListener("click", function (e) { e.preventDefault(); if (!deferred) return; deferred.prompt(); deferred.userChoice.then(function () { deferred = null; a.hidden = true; }); });
+    if (deferred && a && !NATIVE) a.hidden = false;
+  }
+  // the browser may fire beforeinstallprompt before this script runs: keep it
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; });
+
+  function init() { build(); wire(); paint(); window.BKI18n.apply(); backend(); appSide(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2f5ee">
+<title>My courses | BK LearnX</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://bk-learnx.vercel.app/pages/student/my-courses/">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/typing.css">
+<link rel="stylesheet" href="/assets/css/student.css">
+<script src="/assets/js/core/theme.js"></script>
+</head>
+<body>
+<main id="main" class="bk-container" data-snav="courses"><section class="bk-section bk-stack">
+<div class="bk-bar"><h1 data-i18n="c_title"></h1><button type="button" id="open-add" class="bk-btn bk-btn--accent" data-i18n="c_add"></button></div>
+<div id="add" class="bk-panel bk-stack" hidden>
+<div class="bk-bar"><div class="bk-field" style="flex:1;min-width:200px"><label class="bk-label" for="q" data-i18n="c_search"></label><input class="bk-input" id="q" type="search"></div><button type="button" id="close-add" class="bk-btn bk-btn--ghost bk-btn--sm" data-i18n="c_close"></button></div>
+<div id="avail" class="bk-list"></div></div>
+<div id="list" class="bk-list"></div></section></main>
+<div id="bk-footer"></div>
+<script src="/assets/vendor/supabase.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/programs.js"></script>
+<script src="/assets/js/core/supabase.js"></script>
+<script src="/assets/js/core/auth.js"></script>
+<script src="/assets/js/core/i18n.js"></script>
+<script src="/assets/js/student/common.js"></script>
+<script src="/assets/js/student/courses.js" defer></script>
+<script src="/assets/js/components/layout.js" defer></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
     en: { login_title: "Log in", google: "Continue with Google", or: "or use email", email: "Email", password: "Password",
       login_btn: "Log in", forgot_link: "Forgot password?", no_account: "New here?", register_link: "Create an account",
       reg_title: "Create your account", name: "Full name", mobile: "Mobile number", program: "Program", semester: "Semester",
-      choose: "Choose a program", sem: "Semester", password2: "Confirm password", agree_pre: "I agree to the", privacy: "Privacy Policy",
+      choose: "Choose a program", sem: "Semester", medium: "Medium of study", m_en: "English", m_hi: "Hindi", password2: "Confirm password", agree_pre: "I agree to the", privacy: "Privacy Policy",
       and: "and", terms: "Terms", reg_btn: "Create account", have_account: "Already registered?",
       verify_sent: "Check your inbox. We sent a link to confirm your email. After confirming, log in.",
       forgot_title: "Reset your password", forgot_sub: "Enter your email. We will send a one-time code (OTP).", send_otp: "Send OTP",
@@ -25,7 +25,7 @@
     hi: { login_title: "लॉग इन", google: "Google से जारी रखें", or: "या email से", email: "Email", password: "Password",
       login_btn: "लॉग इन", forgot_link: "Password भूल गए?", no_account: "नए हैं?", register_link: "खाता बनाएँ",
       reg_title: "अपना खाता बनाएँ", name: "पूरा नाम", mobile: "मोबाइल नंबर", program: "प्रोग्राम", semester: "सेमेस्टर",
-      choose: "प्रोग्राम चुनें", sem: "सेमेस्टर", password2: "Password दोबारा डालें", agree_pre: "मैं सहमत हूँ:", privacy: "प्राइवेसी पॉलिसी",
+      choose: "प्रोग्राम चुनें", sem: "सेमेस्टर", medium: "पढ़ाई का माध्यम", m_en: "English", m_hi: "हिंदी", password2: "Password दोबारा डालें", agree_pre: "मैं सहमत हूँ:", privacy: "प्राइवेसी पॉलिसी",
       and: "और", terms: "नियम", reg_btn: "खाता बनाएँ", have_account: "पहले से खाता है?",
       verify_sent: "अपना inbox देखें। Email confirm करने का link भेजा गया है। Confirm करने के बाद लॉग इन करें।",
       forgot_title: "Password रीसेट करें", forgot_sub: "अपना email डालें। हम एक बार वाला कोड (OTP) भेजेंगे।", send_otp: "OTP भेजें",
@@ -45,6 +45,7 @@
   var isEmail = function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); };
 
   if (kind !== "forgot") A.getSession().then(function (s) { if (s) location.replace(next()); });
+  if (A.native && $("alt")) $("alt").hidden = true;           // Google login is for the website only (for now)
   var g = $("google");
   if (g) g.addEventListener("click", function () { A.signInGoogle().catch(function (e) { say(err(e)); }); });
 
@@ -82,7 +83,7 @@
       ev.preventDefault(); say("");
       var f = { name: $("name").value.trim(), email: $("email").value.trim(),
         mobile: $("mobile").value.replace(/[\s-]/g, "").replace(/^(\+91|91|0)(?=\d{10}$)/, ""),
-        program: prog.value, semester: semField.hidden ? "" : sem.value, password: $("password").value };
+        program: prog.value, semester: semField.hidden ? "" : sem.value, medium: $("medium").value, password: $("password").value };
       if (f.name.length < 2) return say(T("v_name"));
       if (!isEmail(f.email)) return say(T("v_email"));
       if (!/^[6-9]\d{9}$/.test(f.mobile)) return say(T("v_mobile"));

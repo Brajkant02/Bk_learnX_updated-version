@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pages/admin/
+
+Sitemap: https://bk-learnx.vercel.app/sitemap.xml
